@@ -1,0 +1,29 @@
+Requicitos previos:
+    - Git. (https://git-scm.com/downloads)
+        - Consola (Requerido).
+        - Gráfico (Opcional).
+    - NodeJS 12 (o superior). (https://nodejs.org/es/download/)
+    - npm 6 o superior.
+    - MySQL 8 (En su defecto 5.X). (https://dev.mysql.com/downloads/)
+        - Cliente gráfico (Opcional) (https://dev.mysql.com/downloads/workbench/)
+    - Conexión a internet.
+    - Editor de texto (IDE).
+        - VSCode. (https://code.visualstudio.com/download)
+        - Atom. (https://atom.io/)
+        - Brackets. (http://brackets.io/)
+        - Sublime Text. (https://www.sublimetext.com/download)
+    - Postman. (https://www.postman.com/downloads/)
+
+
+Base de datos (MySQL)
+    + Crear base de datos.
+        - create database DB_NAME;
+    + Crear usuario.
+        - create user 'USER_NAME'@'HOST' identified by 'PASSWORD';
+            - SHOW VARIABLES LIKE 'validate_password.%';
+    + Asignar permisos al usuario para la bd que creamos
+        - grant all privileges on mcu.* to 'user'@'%';
+        - flush privileges;
+Instalación de framework (nodeJS Express)
+    + npm init
+    + npm install express --save
