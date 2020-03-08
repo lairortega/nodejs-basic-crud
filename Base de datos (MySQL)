@@ -27,3 +27,6 @@ Base de datos (MySQL)
 Instalación de framework (nodeJS Express)
     + npm init
     + npm install express --save
+    + npm install mysql --save
+    + (Paso opcional) npm install express-generator -g
+    
