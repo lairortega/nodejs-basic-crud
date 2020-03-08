@@ -26,6 +26,16 @@ Base de datos (MySQL)
     + Asignar permisos al usuario para la bd que creamos
         - grant all privileges on mcu.* to 'user'@'%';
         - flush privileges;
+    + Squema
+        - Customers:
+            CREATE TABLE `customers` (
+                `id` INT(11) NOT NULL AUTO_INCREMENT,
+                `name` VARCHAR(100) CHARACTER SET latin1 COLLATE latin1_spanish_ci,
+                `enable` TINYINT(1),
+                `created` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                `modified` TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+                PRIMARY KEY (`id`)
+            ) ENGINE=InnoDB;
 Instalación de framework (nodeJS Express)
     + npm init
     + npm install express --save

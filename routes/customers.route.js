@@ -1,4 +1,6 @@
 const customerLogic = require("../logic/customer.logic");
+const customerDao = require("../dao/customer.dao");
+
 var handler = function(router){
     router.get('/', function(req, res, next){
         // GET retorna el listado
@@ -14,15 +16,26 @@ var handler = function(router){
         var hasError = customerLogic.newCustomer(req.body.name);
         if(hasError){
             res.status(400);
-            res.send(hasError);
+            res.json({
+                error: hasError
+            });
         }else{
             console.log("Registrar usuario.");
+            customerDao.add(req.body, function(error, result){
+                if(error){
+                    res.status(500);
+                    res.json({
+                        error: "Inserting new customer."
+                    });
+                    console.log(error);
+                }else{
+                    res.json({
+                        name:req.body.name,
+                        id: result
+                    });
+                }
+            });
         }
-        res.json({
-            method: "POST",
-            path: "/customers",
-            comment: "Method design to create customer."
-        });
     });
 
     router.put('/', function(req, res, next){
