@@ -3,11 +3,16 @@ const customerDao = require("../dao/customer.dao");
 
 var handler = function(router){
     router.get('/', function(req, res, next){
-        // GET retorna el listado
-        res.json({
-            method: "GET",
-            path: "/customers",
-            comment: "Method reseved to list all customers."
+        customerDao.list(function(error, result){
+            if(error){
+                res.status(500);
+                res.json({
+                    error: "Retrieving the customers."
+                });
+                console.log(error);
+            }else{
+                res.json(result);
+            }
         });
     });
 
@@ -29,6 +34,7 @@ var handler = function(router){
                     });
                     console.log(error);
                 }else{
+                    res.status(201);
                     res.json({
                         name:req.body.name,
                         id: result
