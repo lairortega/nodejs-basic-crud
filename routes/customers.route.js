@@ -2,7 +2,7 @@ const customerLogic = require("../logic/customer.logic");
 const customerDao = require("../dao/customer.dao");
 
 var handler = function(router){
-    router.get('/', function(req, res, next){
+    router.get('', function(req, res, next){
         customerDao.list(function(error, result){
             if(error){
                 res.status(500);
@@ -13,6 +13,19 @@ var handler = function(router){
             }else{
                 res.json(result);
             }
+        });
+    });
+    router.get('/:id', function(req, res, next){
+        customerDao.find(null, function(error, result){
+            // if(error){
+                res.status(500);
+                res.json({
+                    error: "not implemented."
+                });
+            //     console.log(error);
+            // }else{
+            //     res.json(result);
+            // }
         });
     });
 

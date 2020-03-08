@@ -24,6 +24,9 @@ var customerDao = {
                 callback(null, customers)
             }
         });
+    },
+    find: function(id, callback){
+        callback(null);
     }
 };
 
