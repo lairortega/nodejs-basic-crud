@@ -1,5 +1,6 @@
 var handler = function(router){
     router.get('/', function(req, res, next){
+        // GET retorna el listado
         res.json({
             method: "GET",
             path: "/customers",

@@ -1,7 +1,7 @@
-Requicitos previos:
+Requisitos previos:
     - Git. (https://git-scm.com/downloads)
         - Consola (Requerido).
-        - Gráfico (Opcional).
+        - Gráfico (Opcional) NO SE TRABAJARÁ EN MODO GRÁFICO.
     - NodeJS 12 (o superior). (https://nodejs.org/es/download/)
     - npm 6 o superior.
     - MySQL 8 (En su defecto 5.X). (https://dev.mysql.com/downloads/)
@@ -12,7 +12,8 @@ Requicitos previos:
         - Atom. (https://atom.io/)
         - Brackets. (http://brackets.io/)
         - Sublime Text. (https://www.sublimetext.com/download)
-    - Postman. (https://www.postman.com/downloads/)
+    - Cliente HTTP.
+        - Postman. (https://www.postman.com/downloads/)
 
 
 Base de datos (MySQL)
@@ -29,4 +30,3 @@ Instalación de framework (nodeJS Express)
     + npm install express --save
     + npm install mysql --save
     + (Paso opcional) npm install express-generator -g
-    
