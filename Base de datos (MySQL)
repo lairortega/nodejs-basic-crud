@@ -6,6 +6,7 @@ Requisitos previos:
     - npm 6 o superior.
     - MySQL 8 (En su defecto 5.X). (https://dev.mysql.com/downloads/)
         - Cliente gráfico (Opcional) (https://dev.mysql.com/downloads/workbench/)
+        O en su defecto MariaDB
     - Editor de texto (IDE).
         - VSCode. (https://code.visualstudio.com/download)
         - Atom. (https://atom.io/)

@@ -10,8 +10,11 @@ var handler = function(router){
     });
 
     router.post('/', function(req, res, next){
-        if(customerLogic.newCustomer("Lair")){
-            console.log("Ocurrió un error");
+        console.info(req.body.name);
+        var hasError = customerLogic.newCustomer(req.body.name);
+        if(hasError){
+            res.status(400);
+            res.send(hasError);
         }else{
             console.log("Registrar usuario.");
         }

@@ -1,11 +1,9 @@
 const customerLogic = {
     newCustomer: function(customerName){
-        console.info(customerName);
+        console.info("Customer name:", customerName);
         if(customerName == null || customerName == ''){
-            console.log("Nombre requerido...");
             return "El nombre requerido."
-        }else if(/^[a-z áéíóú]+$/ig.test(customerName)){
-            console.log("Nombre no válido...");
+        }else if(!/^[a-z áéíóú]+$/ig.test(customerName)){
             return "El nombre no es válido."
         }
         return false;
