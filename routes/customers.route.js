@@ -1,3 +1,4 @@
+const customerLogic = require("../logic/customer.logic");
 var handler = function(router){
     router.get('/', function(req, res, next){
         // GET retorna el listado
@@ -9,6 +10,11 @@ var handler = function(router){
     });
 
     router.post('/', function(req, res, next){
+        if(customerLogic.newCustomer("Lair")){
+            console.log("Ocurrió un error");
+        }else{
+            console.log("Registrar usuario.");
+        }
         res.json({
             method: "POST",
             path: "/customers",
