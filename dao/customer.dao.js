@@ -16,17 +16,23 @@ var customerDao = {
                 callback(error);
             }else{
                 var customers = [];
-                // console.log(result);
                 for(var row in result){
                     customers.push(result[row]);
-                    console.log(result[row].created)
                 }
                 callback(null, customers)
             }
         });
     },
     find: function(id, callback){
-        callback(null);
+        dao.query("select id, name, enable, created, modified from customers where id = ?", [id], function(error, result){
+            if(error){
+                callback(error);
+            }else{
+                var customers;
+                customers = result[0];
+                callback(null, customers)
+            }
+        });
     }
 };
 
